@@ -1,0 +1,24 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../Verilog/ecg_bandpass_filter.v" \
+"../../../../../Verilog/feature_extractor_12.v" \
+"../../../../../Verilog/mlp_accelerator_int8.v" \
+"../../../../../Verilog/qst_detector_fsm.v" \
+"../../../../../Verilog/r_peak_detector.v" \
+"../../../../../Verilog/sevseg_driver.v" \
+"../../../../../Verilog/shift_reg_buffer.v" \
+"../../../../../Verilog/top_chip_ecg_uart.v" \
+"../../../../../Verilog/top_ecg_system.v" \
+"../../../../../Verilog/top_qrst_detector.v" \
+"../../../../../Verilog/uart_baud_gen.v" \
+"../../../../../Verilog/uart_rx.v" \
+"../../../../../Verilog/uart_rx_packet_parser.v" \
+"../../../../../Verilog/uart_tx.v" \
+"../../../../../Verilog/uart_tx_packet_builder.v" \
+"../../../../../Verilog/tb_top_chip_ecg_uart.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

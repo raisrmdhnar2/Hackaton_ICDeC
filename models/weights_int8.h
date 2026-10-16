@@ -4,35 +4,35 @@
 
 #include <stdint.h>
 
-#define INPUT_DIM 4
+#define INPUT_DIM 12
 #define HIDDEN_DIM 8
 #define NUM_CLASSES 3
 
 // Skala Kuantisasi
-#define SCALE_X_INV   22.459542f
-#define SCALE_H1_INV  0.008631f
-#define SCALE_OUT_INV 0.010019f
+#define SCALE_X_INV   1.000000f
+#define SCALE_H1_INV  1.000000f
+#define SCALE_OUT_INV 1.000000f
 
-// Bobot Layer 1 [8][4] (INT8)
+// Bobot Layer 1 [8][12] (INT8)
 static const int8_t W1_INT8[HIDDEN_DIM][INPUT_DIM] = {
-    {-30, -103, 55, -99},
-    {-100, 52, 53, 18},
-    {-103, 43, 59, -127},
-    {-108, -84, -34, 3},
-    {74, 89, -51, -15},
-    {-62, 26, 39, -34},
-    {48, 69, 30, 39},
-    {-5, -60, -64, 87},
+    {33, 30, 36, 8, 8, -1, 17, 14, -2, 11, -4, 0},
+    {1, -10, -9, -3, -5, 2, -5, -7, 7, -1, 0, -7},
+    {-24, -22, -34, 14, 3, 10, 3, 14, 12, 2, 17, 5},
+    {1, -10, -7, 1, 4, 1, -1, -2, -7, -4, -2, 5},
+    {-17, -29, -22, 8, -1, 14, 7, 8, 6, 3, 15, 15},
+    {-21, -19, -31, 1, 5, 12, 2, 5, 8, -1, 7, 12},
+    {0, 8, -13, 4, 0, -1, 0, -10, -1, 2, 7, -3},
+    {-4, -3, 5, 2, -3, 3, 0, 5, -4, -2, -2, -7},
 };
 
 // Bias Layer 1 [8] (INT32)
-static const int32_t b1_INT32[HIDDEN_DIM] = {-187, 1460, 1419, -242, 322, 2181, 991, -932};
+static const int32_t b1_INT32[HIDDEN_DIM] = {0, 0, 0, 0, 0, 0, 0, 0};
 
 // Bobot Layer 2 [3][8] (INT8)
 static const int8_t W2_INT8[NUM_CLASSES][HIDDEN_DIM] = {
-    {-127, 21, -123, 26, 16, 68, 18, -88},
-    {-9, -79, 64, 48, -36, -10, 30, 68},
-    {55, 43, -10, -22, 26, -36, -66, -6},
+    {18, 4, -39, -4, -57, -34, -5, -12},
+    {-23, 6, 54, 3, 26, 30, -29, 0},
+    {5, 37, 9, 5, 12, -40, 17, 11},
 };
 
 // Bias Layer 2 [3] (INT32)
